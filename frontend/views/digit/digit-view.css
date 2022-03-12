@@ -1,0 +1,7 @@
+.digit-view {
+    display: block;
+}
+
+.digit-view .framing {
+    border: 1px solid var(--lumo-success-color);
+}

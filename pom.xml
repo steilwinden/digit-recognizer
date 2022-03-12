@@ -5,13 +5,15 @@
     <!-- Vaadin project from https://start.vaadin.com/project/9b627347-23fa-4298-933d-038235582cdf -->
     <groupId>de.steilwinden</groupId>
     <artifactId>digit-recognizer</artifactId>
-    <name>Project base for Spring Boot and Vaadin Flow</name>
-    <version>1.0-SNAPSHOT</version>
+    <name>Digit Recognizer</name>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <properties>
         <java.version>11</java.version>
         <vaadin.version>14.7.3</vaadin.version>
+        <dl4j.version>1.0.0-beta3</dl4j.version>
+        <lombok.version>1.18.22</lombok.version>
     </properties>
 
     <parent>
@@ -124,6 +126,39 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- app -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- deeplearning4j -->
+        <dependency>
+            <groupId>org.nd4j</groupId>
+            <!-- Use nd4j-native-platform for CPU and nd4j-cuda-8.0-platform or nd4j-cuda-9.2-platform for GPU -->
+            <!-- Note: Some use-cases (like Word2Vec work better with CPU) -->
+            <artifactId>nd4j-native-platform</artifactId>
+            <version>${dl4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.deeplearning4j</groupId>
+            <artifactId>deeplearning4j-core</artifactId>
+            <version>${dl4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datavec</groupId>
+            <artifactId>datavec-api</artifactId>
+            <version>${dl4j.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
