@@ -79,7 +79,7 @@ public class NetworkService {
 
         if (!trainedModelFile.exists()) {
 
-            trainedModelFile.createNewFile();
+            trainedModelFile.getParentFile().mkdirs();
 
             // Build Our Neural Network
             log.info("BUILD MODEL");

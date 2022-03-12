@@ -42,6 +42,9 @@ public class DigitPresenter {
 
         File file = new File(PNG_PATHNAME);
         try {
+            if (!file.exists()) {
+                file.getParentFile().mkdirs();
+            }
             ImageIO.write(image, "png", file);
             int digit = networkService.guessDigit();
             Notification.show("Result: " + digit, 3000, Notification.Position.MIDDLE);
