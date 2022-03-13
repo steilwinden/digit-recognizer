@@ -55,7 +55,7 @@ import java.util.Random;
 @Service
 public class NetworkService {
 
-    public static final String NURO_FOLDER = "src/main/resources/META-INF/resources/nuro";
+    public static final String NURO_FOLDER = "src/main/resources/nuro";
     public static final String ADHOC_FOLDER = NURO_FOLDER + "/adhoc";
     private static final String MNIST_PNG_FOLDER = NURO_FOLDER + "/mnist_png";
     private static final String TRAINED_MODEL_ZIP = NURO_FOLDER + "/model/trained_mnist_model.zip";
